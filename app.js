@@ -2,6 +2,8 @@ const express = require("express");
 const mongoose = require("mongoose");
 const alieanRouter = require("./routes/alieans");
 //url for connecting to the database
+//you dont have to go and create new collection in monngodb manually
+//it creates a new collection by itself just like firebase other databases
 const url = "mongodb://localhost/AlieanDb";
 
 const app = express();
@@ -10,7 +12,7 @@ const app = express();
 mongoose.connect(url, { useNewUrlParser: true });
 //getting the instance of the connect to perform mans
 const con = mongoose.connection;
-//opening the connection
+//opening the connection and connecting to the database
 con.on("open", () => {
   console.log("the connection is opened!");
 });
