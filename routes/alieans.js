@@ -55,7 +55,7 @@ router.post("/", async (req, res) => {
 //a method to delete a item in database based on its id
 router.delete("/:id", async (req, res) => {
   try {
-    //selecting the document by id and removing it from the collection
+    //selecting the document by id and removing it from the collections
     const alieans = await Aliean.findById(req.params.id);
     const result = await alieans.remove();
     res.json(result);
